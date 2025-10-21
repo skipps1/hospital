@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS review(
     review_id SERIAL,
     text TEXT,
     rating INT,
-    appointment_id INT REFERENCES appointment(appointment_id) ON DELETE CASCADE
+    doctor_id INT REFERENCES doctor(doctor_id) ON DELETE CASCADE,
+    patient_id INT REFERENCES patient(patient_id) ON DELETE CASCADE
 );
 
 CREATE SEQUENCE IF NOT EXISTS specialization_id_seq;
